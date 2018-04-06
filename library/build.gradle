@@ -1,0 +1,26 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+allprojects {
+    repositories {
+        jcenter()
+        google()
+    }
+}
+
+android {
+    compileSdkVersion 27
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineCore"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineAndroid"
+    implementation "android.arch.lifecycle:livedata:$arch"
+
+    annotationProcessor "android.arch.lifecycle:compiler:$arch"
+}
+kotlin {
+    experimental {
+        coroutines "enable"
+    }
+}
